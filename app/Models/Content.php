@@ -19,4 +19,14 @@ class Content extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'author_id');
+    }
+
+    public function reviewer()
+    {
+        return $this->belongsTo(User::class, 'reviewer_id');
+    }
 }
