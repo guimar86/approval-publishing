@@ -2,9 +2,10 @@
 
     <h2 class="text-2xl font-bold mb-4">Your content</h2>
 
-    @can('create')
+    @can('create', App\Models\Content::class)
         <a href="{{ route('content.create') }}" class="btn btn-primary mb-4">Create New Content</a>
     @endcan
+
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
         @foreach ($contents as $content)
