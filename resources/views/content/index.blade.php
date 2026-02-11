@@ -1,6 +1,9 @@
 <x-layout title="Content List">
 
-    <h2 class="text-2xl font-bold mb-4">Your content</h2>
+    <div class="hero-section">
+        <h1 class="text-2xl font-bold mb-4 text-start">Your content</h1>
+    </div>
+
 
     @can('create', App\Models\Content::class)
         <a href="{{ route('content.create') }}" class="btn btn-primary mb-4">Create New Content</a>

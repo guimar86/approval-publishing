@@ -1,13 +1,14 @@
 <x-layout title="Edit content">
-    <h2 class="text-2xl font-bold mb-4">Edit Content Page</h2>
 
-    <div class="mx-auto" style="width:850px">
+
+    <div class="mx-auto" style="width:850px" x-data="{ title: '{{ old('title', $content->title) }}' }">
+        <h2 class="text-2xl font-bold mb-4" x-text="title"></h2>
         <form method="POST" action="{{ route('content.edit', $content) }}">
             @csrf
             @method('PUT')
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" name="title"
+                <input x-model="title" type="text" class="form-control" id="title" name="title"
                     value="{{ old('title', $content->title) }}">
             </div>
             <div class="mb-3">
