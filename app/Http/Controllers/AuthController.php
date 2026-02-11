@@ -81,7 +81,7 @@ class AuthController extends Controller
     public function destroy(User $user)
     {
         Auth::logout();
-        return redirect()->route("auth.login");
+        return redirect('/');
     }
 }
 
